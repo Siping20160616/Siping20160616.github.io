@@ -16,7 +16,12 @@
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect'],
-      ]
+      ],
+      menus: {
+        motorDirection: ['this way', 'that way', 'reverse'],
+        lessMore: ['<', '>'],
+        eNe: ['=','not =']
+      },
   };
 
   // Register ScratchExtension
