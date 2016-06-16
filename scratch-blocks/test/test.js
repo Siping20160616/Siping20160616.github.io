@@ -17,14 +17,11 @@
       blocks: [
           [' ','connect %s','connect','connect'],
       ],
-      menus: {
-        motorDirection: ['this way', 'that way', 'reverse'],
-        lessMore: ['<', '>'],
-        eNe: ['=','not =']
-      },
+      menus:{},
+      url: 'https://Siping20160616.github.io/scratch-blocks/test'
   };
 
   // Register ScratchExtension
-  ScratchExtensions.register('Machan Extension',descriptor,ext);
+  ScratchExtensions.register('Test Extension',descriptor,ext);
 
 })({});
