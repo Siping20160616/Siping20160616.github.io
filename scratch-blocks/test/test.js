@@ -15,7 +15,7 @@
   // descriptor block
   var descriptor={
       blocks: [
-          [' ','connect %s','connect','connect'],
+          [' ','connect %m.tx','connect','connect'],
       ],
       menus:{
         tx: ['<', '>']
