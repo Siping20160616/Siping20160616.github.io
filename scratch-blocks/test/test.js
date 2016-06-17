@@ -11,10 +11,10 @@
   ext.command = function(str) {
     return eval(str);
   };
-  ext.function = function(str) {
-    var function;
-    eval('fuction=function(){'+str+'}');
-    return function();
+  ext.script = function(str) {
+    var script;
+    eval('script=function(){'+str+'}');
+    return script();
 
   };
   // descriptor block
@@ -22,7 +22,7 @@
       blocks: [
           [' ','connect %s','connect','connect2'],
           ['r','command %s','command','1+2','command'],
-          ['r','function %s','function','return "hello world";']
+          ['r','script %s','script','return "hello world";']
       ],
       menus:{script_mode:['command','function']},
       url: 'https://Siping20160616.github.io/scratch-blocks/test'
