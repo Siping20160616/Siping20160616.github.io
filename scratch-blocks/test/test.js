@@ -7,22 +7,13 @@
   };
   // connect block
   ext.connect=function(str){
-    
   };
-  ext.script = function(str,mode) {
-    /*
-    if(mode='command'){
-      return eval(str);
-    }
-    if(mode='function'){
-      var script;
-      eval('script=function(){return(12345);}');
-      return script();
-    }
-    return null;
-    */
+  ext.command = function(str) {
+    return eval(str);
+  };
+  ext.script = function(str) {
     var script;
-    eval(str);
+    eval("script=function(){"+str+"}");
     return script();
 
   };
@@ -30,8 +21,8 @@
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect2'],
-          ['r','script %s %m.script_mode','script','script=function(){return(12345);}','command'],
-          ["r","スクリプト %s","script","script=function(){return \"hello world\";}"]
+          ['r','command %s','script','\"hellovworld\"','command'],
+          ["r","script %s","return \"hello world\";"]
       ],
       menus:{script_mode:['command','function']},
       url: 'https://Siping20160616.github.io/scratch-blocks/test'
