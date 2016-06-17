@@ -13,7 +13,7 @@
   };
   ext.function = function(str) {
     var function;
-    eval('script=function(){'+str+'}');
+    eval('fuction=function(){'+str+'}');
     return function();
 
   };
