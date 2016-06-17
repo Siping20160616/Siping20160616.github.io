@@ -10,14 +10,14 @@
     
   };
   ext.script = function(str) {
-    return eval('('+str+');');
+    return (eval(str));
   };
   
   // descriptor block
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect'],
-          ['r','return("hello world");']
+          ['r','return "hello world"']
       ],
       menus:{},
       url: 'https://Siping20160616.github.io/scratch-blocks/test'
