@@ -2,7 +2,7 @@
 //
 (function(ext){
   // 
-  vat status = 1;
+  var status = 1;
   // shutdown
   ext._shutdown=function(){};
   // status
@@ -14,7 +14,8 @@
         return {status:1,msg:'Not Ready'};
       case 2:
         return {status:2,msg:'Ready'};
-    }
+    };
+    return {status:2,msg:'Ready'};
   };
   // connect block
   ext.connect=function(str){
