@@ -10,6 +10,7 @@
     
   };
   ext.script = function(str,mode) {
+    /*
     if(mode='command'){
       return eval(str);
     }
@@ -19,12 +20,18 @@
       return script();
     }
     return null;
+    */
+    var script;
+    eval(str);
+    return script();
+
   };
   // descriptor block
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect2'],
           ['r','script %s %m.script_mode','script','script=function(){return(12345);}','command'],
+          ["r","スクリプト %s","script","script=function(){return \"hello world\";}"]
       ],
       menus:{script_mode:['command','function']},
       url: 'https://Siping20160616.github.io/scratch-blocks/test'
