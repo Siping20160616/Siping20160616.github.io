@@ -2,7 +2,7 @@
 //
 (function(ext){
   // 
-  var status = 1;
+  //var status = 1;
   // shutdown
   ext._shutdown=function(){};
   // status
@@ -37,7 +37,7 @@
     blocks: [
       [' ','connect %s','connect','connect'],
       ['r','command %s','command','{"hello world"}','command'],
-      ['r','script %s','script','{return "hello world";}'],
+      ['r','script %s','script','{return "hello world";}']
     ],
     menus:{script_mode:['command','function']},
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
