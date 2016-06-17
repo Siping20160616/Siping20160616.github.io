@@ -15,13 +15,12 @@
     var script;
     eval('script=function(){'+str+'}');
     return script();
-
   };
   // descriptor block
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect2'],
-          ['r','command %s','command','{1+2}','command'],
+          ['r','command %s','command','{"hello world"}','command'],
           ['r','script %s','script','{return "hello world";}']
       ],
       menus:{script_mode:['command','function']},
