@@ -16,7 +16,7 @@
     }
     if(mode='function'){
       var script;
-      eval('script=function(){return 123}');
+      eval('script=function(){return(12345);}');
       ret = script();
     }
     return ret;
