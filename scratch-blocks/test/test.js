@@ -17,10 +17,10 @@
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect2'],
-          ['r','script %s','script','return "Hello World"'],
+          ['r','script %m.script_mode','script','return "Hello World"'],
           ['r','script2 %s','script','return "Hello World"']
       ],
-      menus:{},
+      menus:{script_mode:['command','function']},
       url: 'https://Siping20160616.github.io/scratch-blocks/test'
   };
   // Register ScratchExtension
