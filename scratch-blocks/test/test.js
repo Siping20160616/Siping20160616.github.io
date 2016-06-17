@@ -24,7 +24,7 @@
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect2'],
-          ['r','script %s %m.script_mode','script','return "Hello World"','command']
+          ['r','script %s %m.script_mode','script','return "Hello World"','command'],
       ],
       menus:{script_mode:['command','function']},
       url: 'https://Siping20160616.github.io/scratch-blocks/test'
