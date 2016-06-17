@@ -10,22 +10,20 @@
     
   };
   ext.script = function(str,mode) {
-    var ret;
     if(mode='command'){
-      ret = eval(str);
+      return eval(str);
     }
     if(mode='function'){
       var script;
       eval('script=function(){return(12345);}');
-      ret = script();
+      return script();
     }
-    return ret;
   };
   // descriptor block
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect2'],
-          ['r','script %s %m.script_mode','script','return "Hello World"','command'],
+          ['r','script %s %m.script_mode','script','script=function(){return(12345);}','command'],
       ],
       menus:{script_mode:['command','function']},
       url: 'https://Siping20160616.github.io/scratch-blocks/test'
