@@ -2,22 +2,24 @@
 //
 (function(ext){
   // 
-  //var status = 1;
+  var status = 1;  // default Not Ready
   // shutdown
   ext._shutdown=function(){};
   // status
   ext._getStatus=function(){
-    /*
     switch(status){
       case 0:
         return {status:0,msg:'Error'};
+        break;
       case 1:
         return {status:1,msg:'Not Ready'};
+        break;
       case 2:
         return {status:2,msg:'Ready'};
+        break;
+      default:
+        return {status:1,msg:'Not Ready'};
     };
-    */
-    return {status:2,msg:'Ready'};
   };
   // connect block
   ext.connect=function(str){
