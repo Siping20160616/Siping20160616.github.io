@@ -17,7 +17,7 @@
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect2'],
-          ['r','script %m.script_mode','script','return "Hello World"'],
+          ['r','script %s %m.script_mode','script','return "Hello World"','command'],
           ['r','script2 %s','script','return "Hello World"']
       ],
       menus:{script_mode:['command','function']},
