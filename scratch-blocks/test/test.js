@@ -7,7 +7,7 @@
   ext._shutdown=function(){};
   // status
   ext._getStatus=function(){
-    select(status){
+    switch(status){
       case 0:
         return {status:0,msg:'Error'};
       case 1:
