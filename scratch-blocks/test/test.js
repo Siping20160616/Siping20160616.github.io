@@ -10,13 +10,14 @@
     
   };
   ext.script = function(str,mode) {
-    var ret=null;
+    var ret;
     if(mode='command'){
       ret = eval(str);
     }
     if(mode='function'){
-      var r = eval(str);
-      ret = JSON.stringify(r);
+      var script;
+      eval('script=function(){return 123}');
+      ret = script();
     }
     return ret;
   };
