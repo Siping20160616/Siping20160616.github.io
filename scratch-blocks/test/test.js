@@ -1,11 +1,20 @@
 // 
 //
 (function(ext){
+  // 
+  vat status = 1;
   // shutdown
   ext._shutdown=function(){};
   // status
   ext._getStatus=function(){
-    return {status:2,msg:'Ready'};
+    select(status){
+      case 0:
+        return {status:0,msg:'Error'};
+      case 1:
+        return {status:1,msg:'Not Ready'};
+      case 2:
+        return {status:2,msg:'Ready'};
+    }
   };
   // connect block
   ext.connect=function(str){
@@ -26,8 +35,6 @@
       [' ','connect %s','connect','connect'],
       ['r','command %s','command','{"hello world"}','command'],
       ['r','script %s','script','{return "hello world";}'],
-      ['R','command %s','command','{"hello world"}','command'],
-      ['R','script %s','script','{return "hello world";}'],
     ],
     menus:{script_mode:['command','function']},
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
