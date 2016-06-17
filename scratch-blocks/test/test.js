@@ -19,7 +19,7 @@
   // descriptor block
   var descriptor={
       blocks: [
-          [' ','connect %s','connect','connect2'],
+          [' ','connect %s','connect','connect'],
           ['r','command %s','command','{"hello world"}','command'],
           ['r','script %s','script','{return "hello world";}']
       ],
