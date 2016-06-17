@@ -18,6 +18,7 @@
       eval('script=function(){return(12345);}');
       return script();
     }
+    return null;
   };
   // descriptor block
   var descriptor={
