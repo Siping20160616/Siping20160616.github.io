@@ -11,7 +11,7 @@ $.getScript(scriptpath+"f001.js", function(){
   // 
   var status = 1;  // default Not Ready
   
-  //mz();
+  mz();
   
   // shutdown
   ext._shutdown=function(){};
