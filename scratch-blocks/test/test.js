@@ -3,6 +3,10 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 
 //$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
 
+$.getScript(scriptpath+"f001.js", function(){
+	 	alert("Script loaded and executed.");
+});
+
 (function(ext){
   // 
   var status = 1;  // default Not Ready
