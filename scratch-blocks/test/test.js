@@ -1,5 +1,9 @@
 // 
-//
+var scriptpath = document.currentScript.src.match(/.*\//);
+
+//$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
+alert(scriptpath);
+
 (function(ext){
   // 
   var status = 1;  // default Not Ready
