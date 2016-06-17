@@ -10,7 +10,8 @@
     
   };
   ext.script = function(str) {
-    return (eval(str));
+    var ret = eval(str);
+    return ret;
   };
   
   // descriptor block
