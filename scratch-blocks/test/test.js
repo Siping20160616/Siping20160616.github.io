@@ -13,11 +13,10 @@
     var ret = eval(str);
     return ret;
   };
-  
   // descriptor block
   var descriptor={
       blocks: [
-          [' ','connect %s','connect','connect'],
+          [' ','connect %s','connect','connect2'],
           ['r','script %s','script','return "Hello World"'],
           ['r','script2 %s','script','return "Hello World"']
       ],
