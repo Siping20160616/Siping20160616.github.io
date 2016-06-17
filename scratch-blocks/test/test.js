@@ -9,16 +9,22 @@
   ext.connect=function(str){
     
   };
-  ext.script = function(str) {
-    var ret = eval(str);
+  ext.script = function(str,mode) {
+    var ret=null;
+    if(mode='command'){
+      ret = eval(str);
+    }
+    if(mode='function'){
+      var r = eval(str);
+      ret = JSON.stringify(r);
+    }
     return ret;
   };
   // descriptor block
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect2'],
-          ['r','script %s %m.script_mode','script','return "Hello World"','command'],
-          ['r','script2 %s','script','return "Hello World"']
+          ['r','script %s %m.script_mode','script','return "Hello World"','command']
       ],
       menus:{script_mode:['command','function']},
       url: 'https://Siping20160616.github.io/scratch-blocks/test'
