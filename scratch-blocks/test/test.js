@@ -13,7 +13,7 @@
   };
   ext.script = function(str) {
     var script;
-    eval("script=function(){"+str+"}");
+    eval('script=function(){'+str+'}');
     return script();
 
   };
@@ -21,7 +21,7 @@
   var descriptor={
       blocks: [
           [' ','connect %s','connect','connect2'],
-          ['r','command %s','script','\"hellovworld\"','command'],
+          ['r','command %s','script','1+2','command'],
           ["r","script %s","return \"hello world\";"]
       ],
       menus:{script_mode:['command','function']},
