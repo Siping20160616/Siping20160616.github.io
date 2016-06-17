@@ -7,6 +7,7 @@
   ext._shutdown=function(){};
   // status
   ext._getStatus=function(){
+    /*
     switch(status){
       case 0:
         return {status:0,msg:'Error'};
@@ -15,6 +16,7 @@
       case 2:
         return {status:2,msg:'Ready'};
     };
+    */
     return {status:2,msg:'Ready'};
   };
   // connect block
