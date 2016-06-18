@@ -2,11 +2,13 @@
 var scriptpath = document.currentScript.src.match(/.*\//);
 //$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
 (function(ext){
-  var status=1;     // default Not Ready
-  var receive=null; //
+  var status=1;
+  var receive=null;
   var data=JSON.parse('{}');
   // shutdown
-  ext._shutdown=function(){};
+  ext._shutdown=function(){
+    close();
+  };
   // status
   ext._getStatus=function(){
     switch(status){
@@ -49,8 +51,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
   // JSON_parse block
   ext.JSON_parse=function(str,item){
     try{
-      var data=JSON.parse(str);
-      return data[item];
+      return JSON.parse(str)[item];
     }
     catch(e){
       return null;
@@ -81,7 +82,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
   };
   // name
-  var name = 'Test Extension';
+  var name='Test Extension';
   // Register ScratchExtension
   ScratchExtensions.register(name,descriptor,ext);
   ////
@@ -117,7 +118,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     Connect(url);
   };
   function onMessage(event){
-    if (event && event.data){
+    if (event&&event.data){
       try{
         receive=event.data;
         data=JSON.parse(receive);
