@@ -1,10 +1,7 @@
 // Test Extension 
-var scriptpath = document.currentScript.src.match(/.*\//);
-//$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
 (function(ext){
   var status=1;
   var receive=null;
-  var data=JSON.parse('{}');
   // shutdown
   ext._shutdown=function(){
     close();
@@ -113,7 +110,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     status=1;
     if(url!=null)Connect(url);
   };
-  function onError(event) {
+  function onError(event){
     status=0;
     Connect(url);
   };
@@ -121,11 +118,9 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     if (event&&event.data){
       try{
         receive=event.data;
-        data=JSON.parse(receive);
       }
       catch(e){
         receive='{"Error":"'+e+'"}';
-        data=JSON.parse(receive);
       };
     };
   };
@@ -148,11 +143,9 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     websocket.close();
   };
   // guid
-  function guid() {
-    function s4() {
-      return Math.floor((1 + Math.random()) * 0x10000)
-        .toString(16)
-        .substring(1);
+  function guid(){
+    function s4(){
+      return Math.floor((1+Math.random())*0x10000).toString(16).substring(1);
     };
     return s4()+s4()+'-'+s4()+'-'+s4()+'-'+s4()+'-'+s4()+s4()+s4();
   };
