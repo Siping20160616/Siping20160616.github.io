@@ -46,18 +46,18 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     ],
     menus:{script_mode:['command','function']},
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
-    
-   try {
-     alert("test");
-      $.getScript(scriptpath+"f001.js");
-      mz();
-   }
-   catch(e){
-     alert(e);
-   };
-    
-    
   };
   // Register ScratchExtension
   ScratchExtensions.register('Test Extension',descriptor,ext);
+  
+  try {
+   alert("test");
+    $.getScript(scriptpath+"f001.js");
+    mz();
+ }
+ catch(e){
+   alert(e);
+ };
+    
+  
 })({});
