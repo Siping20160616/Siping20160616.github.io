@@ -1,7 +1,10 @@
 // Test Extension 
 var scriptpath = document.currentScript.src.match(/.*\//);
 //$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
-(function(ext){
+new (function() {
+//(function(ext){
+  let ext_ = this;
+  
   var status = 1;  // default Not Ready
   // shutdown
   ext._shutdown=function(){};
@@ -44,5 +47,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
   // name
   var name = 'Test Extension';
   // Register ScratchExtension
-  ScratchExtensions.register(name,descriptor,ext);
-})({});
+  ScratchExtensions.register(name,descriptor,ext_);
+//})({});
+})();
+
