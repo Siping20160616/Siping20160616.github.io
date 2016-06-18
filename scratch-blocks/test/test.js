@@ -5,7 +5,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 
 $.getScript(scriptpath+"f001.js", function(){
   //alert("Script loaded and executed.");
-  mz();
+  //mz();
 });
 try {
   mz();
