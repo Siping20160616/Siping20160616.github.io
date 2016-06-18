@@ -32,7 +32,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     return script();
   };
   // descriptor
-  let descriptor={
+  var descriptor={
     blocks: [
       [' ','connect %s','connect','connect'],
       ['r','command %s','command','{"hello world"}','command'],
@@ -42,7 +42,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
   };
   // name
-  let name = 'Test Extension';
+  var name = 'Test Extension';
   // Register ScratchExtension
   ScratchExtensions.register(name,descriptor,ext);
 })({});
