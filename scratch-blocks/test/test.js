@@ -5,13 +5,13 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 
 $.getScript(scriptpath+"f001.js", function(){
   //alert("Script loaded and executed.");
+  mz();
 });
 
 (function(ext){
   // 
   var status = 1;  // default Not Ready
   
-  mz();
   
   // shutdown
   ext._shutdown=function(){};
