@@ -3,7 +3,7 @@
   var status=1;
   var receive=null;
   var websocket=null;
-  var url=null;  
+  var url=null;
   var name='Test Extension';
   // descriptor
   var descriptor={
@@ -23,7 +23,7 @@
   };
   // shutdown
   ext._shutdown=function(){
-    close();
+    Close();
   };
   // status
   ext._getStatus=function(){
