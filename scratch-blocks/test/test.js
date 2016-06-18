@@ -3,14 +3,16 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 
 //$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
 
-try {
-   $.getScript(scriptpath+"f001.js");
-}
-catch(e){
-  alert(e);
-};
-
 (function(ext){
+   try {
+      $.getScript(scriptpath+"f001.js");
+      mz();
+   }
+   catch(e){
+     alert(e);
+   };
+   
+   
   // 
   var status = 1;  // default Not Ready
   // shutdown
