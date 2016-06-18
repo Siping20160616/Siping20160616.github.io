@@ -4,7 +4,6 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 (function(ext){
   var status=1;     // default Not Ready
   var receive=null; //
-  
   // shutdown
   ext._shutdown=function(){};
   // status
@@ -87,4 +86,76 @@ var scriptpath = document.currentScript.src.match(/.*\//);
   var name = 'Test Extension';
   // Register ScratchExtension
   ScratchExtensions.register(name,descriptor,ext);
+  ////
+  var websocket=null;
+  var url=null;
+  // Connect
+  function Connect(str){
+    if((url==str)&&(status==2))return;
+    url=str;
+    result=null;
+    status=1;
+    websocket=null;
+    try {
+      websocket=new WebSocket(str);
+      websocket.onopen=onOpen;
+      websocket.onclose=onClose;
+      websocket.onerror=onError;
+      websocket.onmessage=onMessage;
+    }
+    catch(e) {
+      console.info("status:0");
+      status=0;
+    };
+  };
+  function onOpen(event){
+    status=2;
+  };
+  function onClose(event){
+    status=1;
+    if(url!=null)Connect(url);
+  };
+  function onError(event) {
+    status=0;
+    Connect(url);
+  };
+  function onMessage(event){
+    if (event && event.data){
+      try{
+        receive=event.data;
+        data=JSON.parse(receive);
+      }
+      catch(e){
+        receive='{"Error":"'+e+'"}';
+        data=JSON.parse(receive);
+      };
+    };
+  };
+  // send
+  function Send(str){
+    if (status==2){
+      try {
+        websocket.send(str);
+      }
+      catch(e){
+        return false;
+      };
+    };
+    return true;
+  };
+  // clode
+ function Close(){
+    url=null;
+    recive=null;
+    websocket.close();
+  };
+  // guid
+  function guid() {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    };
+    return s4()+s4()+'-'+s4()+'-'+s4()+'-'+s4()+'-'+s4()+s4()+s4();
+  };
 })({});
