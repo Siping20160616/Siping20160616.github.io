@@ -8,7 +8,7 @@ $.getScript(scriptpath+"f001.js", function(){
   mz();
 });
 try {
-  f001.mz();
+  mz();
 }
 catch(e){
   alert(e);
@@ -17,8 +17,6 @@ catch(e){
 (function(ext){
   // 
   var status = 1;  // default Not Ready
-  
-  
   // shutdown
   ext._shutdown=function(){};
   // status
