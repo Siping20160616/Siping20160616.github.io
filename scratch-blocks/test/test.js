@@ -83,29 +83,8 @@
     eval('script=function(){'+str+'}');
     return script();
   };
-  // descriptor
-  var descriptor={
-    blocks: [
-      [' ','connect %s','connect','ws://localhost:50000/'],
-      [' ','send %s','send','{}'],
-      ['r','status','status'],
-      ['r','receive','receive'],
-      ['r','JSON_parse %s %s','JSON_parse','{}',''],
-      ['r','guid','guid'],
-      [' ','close','close'],
-      ['r','command %s','command','{"hello world"}','command'],
-      ['r','script %s','script','{return "hello world";}']
-    ],
-    menus:{script_mode:['command','function']},
-    url: 'https://Siping20160616.github.io/scratch-blocks/test'
-  };
-  // name
-  var name='Test Extension';
-  // Register ScratchExtension
-  ScratchExtensions.register(name,descriptor,ext);
-  ////
-  var websocket=null;
-  var url=null;
+  ///////////////////////////
+  ///////////////////////////
   // Connect
   function Connect(str){
     if((url==str)&&(status==2))return;
