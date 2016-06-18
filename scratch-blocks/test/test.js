@@ -7,7 +7,12 @@ $.getScript(scriptpath+"f001.js", function(){
   //alert("Script loaded and executed.");
   mz();
 });
-f001.mz();
+try {
+  f001.mz();
+}
+catch(e){
+  alert(e);
+};
 
 (function(ext){
   // 
