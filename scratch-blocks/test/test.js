@@ -1,4 +1,6 @@
-// Test Extension 
+// This file is covered by the GNU General Public License.
+// See the file COPYING for more details.
+// Copyright (C) 2016 Masataka.Shinke
 (function(ext){
   var status=1;
   var receive=null;
