@@ -40,16 +40,6 @@
         return {status:1,msg:'Not Ready'};
     };
   };
-  // command block
-  ext.command = function(str) {
-    return eval(str);
-  };
-  // script block
-  ext.script = function(str) {
-    var script;
-    eval('script=function(){'+str+'}');
-    return script();
-  };
   // connect block
   ext.connect=function(str){
     Connect(str);
@@ -66,6 +56,10 @@
   ext.receive=function(){
     return receive;
   };
+  // close block
+  ext.close=function(){
+    Close();
+  };
   // JSON_parse block
   ext.JSON_parse=function(str,item){
     try{
@@ -79,22 +73,28 @@
   ext.guid=function(){
     return guid();
   };
-  // close block
-  ext.close=function(){
-    Close();
+  // command block
+  ext.command = function(str) {
+    return eval(str);
+  };
+  // script block
+  ext.script = function(str) {
+    var script;
+    eval('script=function(){'+str+'}');
+    return script();
   };
   // descriptor
   var descriptor={
     blocks: [
-      ['r','command %s','command','{"hello world"}','command'],
-      ['r','script %s','script','{return "hello world";}'],
       [' ','connect %s','connect','ws://localhost:50000/'],
       [' ','send %s','send','{}'],
       ['r','status','status'],
       ['r','receive','receive'],
       ['r','JSON_parse %s %s','JSON_parse','{}',''],
       ['r','guid','guid'],
-      [' ','close','close']
+      [' ','close','close'],
+      ['r','command %s','command','{"hello world"}','command'],
+      ['r','script %s','script','{return "hello world";}']
     ],
     menus:{script_mode:['command','function']},
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
