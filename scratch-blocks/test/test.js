@@ -1,7 +1,6 @@
-// 
+// Test Extension 
 var scriptpath = document.currentScript.src.match(/.*\//);
 //$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
-
 (function(ext){
   var status = 1;  // default Not Ready
   // shutdown
@@ -11,13 +10,10 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     switch(status){
       case 0:
         return {status:0,msg:'Error'};
-        break;
       case 1:
         return {status:1,msg:'Not Ready'};
-        break;
       case 2:
         return {status:2,msg:'Ready'};
-        break;
       default:
         return {status:1,msg:'Not Ready'};
     };
@@ -36,7 +32,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     return script();
   };
   // descriptor
-  var descriptor={
+  let descriptor={
     blocks: [
       [' ','connect %s','connect','connect'],
       ['r','command %s','command','{"hello world"}','command'],
@@ -45,6 +41,8 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     menus:{script_mode:['command','function']},
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
   };
+  // name
+  let name = 'Test Extension';
   // Register ScratchExtension
-  ScratchExtensions.register('Test Extension',descriptor,ext_);
+  ScratchExtensions.register(name,descriptor,ext);
 })({});
