@@ -3,7 +3,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 //$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
 new (function() {
 //(function(ext){
-  let ext_ = this;
+  var ext_ = this;
   
   var status = 1;  // default Not Ready
   // shutdown
