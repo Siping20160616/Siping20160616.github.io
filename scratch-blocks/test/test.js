@@ -12,13 +12,10 @@ var scriptpath = document.currentScript.src.match(/.*\//);
   ext._getStatus=function(){
     switch(status){
       case 0:
-        console.info("status:0");
         return {status:0,msg:'Error'};
       case 1:
-        console.info("status:1");
         return {status:1,msg:'Not Ready'};
       case 2:
-        console.info("status:2");
         return {status:2,msg:'Ready'};
       default:
         return {status:1,msg:'Not Ready'};
@@ -106,7 +103,6 @@ var scriptpath = document.currentScript.src.match(/.*\//);
       websocket.onmessage=onMessage;
     }
     catch(e) {
-      console.info("status:0");
       status=0;
     };
   };
