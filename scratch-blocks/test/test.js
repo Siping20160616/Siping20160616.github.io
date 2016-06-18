@@ -84,7 +84,6 @@
   ///////////////////////////
   ///////////////////////////
   // Connect
-  /*
   function Connect(str){
     if((url==str)&&(status==2))return;
     url=str;
@@ -148,7 +147,6 @@
     };
     return s4()+s4()+'-'+s4()+'-'+s4()+'-'+s4()+'-'+s4()+s4()+s4();
   };
-  */
   // Register ScratchExtension
   ScratchExtensions.register(name,descriptor,ext);
 })({});
