@@ -53,7 +53,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
   try {
    alert("test");
     $.getScript(scriptpath+"f001.js");
-    mz();
+    f001.mz();
  }
  catch(e){
    alert(e);
