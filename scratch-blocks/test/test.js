@@ -126,11 +126,13 @@
   };
   // send
   function Send(str){
+    alert(str);
     if (status==2){
       try {
         websocket.send(str);
       }
       catch(e){
+        alert(e);
         return false;
       };
     };
