@@ -2,6 +2,27 @@
 (function(ext){
   var status=1;
   var receive=null;
+  var websocket=null;
+  var url=null;  
+  var name='Test Extension';
+  // descriptor
+  var descriptor={
+    blocks: [
+      ['r','command %s','command','{"hello world"}','command'],
+      ['r','script %s','script','{return "hello world";}'],
+      [' ','connect %s','connect','ws://localhost:50000/'],
+      [' ','send %s','send','{}'],
+      ['r','status','status'],
+      ['r','receive','receive'],
+      ['r','JSON_parse %s %s','JSON_parse','{}',''],
+      ['r','guid','guid'],
+      [' ','close','close']
+    ],
+    menus:{script_mode:['command','function']},
+    url: 'https://Siping20160616.github.io/scratch-blocks/test'
+  };
+  // Register ScratchExtension
+  ScratchExtensions.register(name,descriptor,ext);
   // shutdown
   ext._shutdown=function(){
     close();
