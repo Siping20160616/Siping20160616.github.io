@@ -4,7 +4,6 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 (function(ext){
   var status=1;     // default Not Ready
   var receive=null; //
-  var SenderID=null;
   var data=JSON.parse('{}');
   // shutdown
   ext._shutdown=function(){};
