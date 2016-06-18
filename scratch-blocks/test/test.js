@@ -4,15 +4,6 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 //$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
 
 (function(ext){
-   try {
-      $.getScript(scriptpath+"f001.js");
-      mz();
-   }
-   catch(e){
-     alert(e);
-   };
-   
-   
   // 
   var status = 1;  // default Not Ready
   // shutdown
@@ -55,6 +46,17 @@ var scriptpath = document.currentScript.src.match(/.*\//);
     ],
     menus:{script_mode:['command','function']},
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
+    
+   try {
+     alert("test");
+      $.getScript(scriptpath+"f001.js");
+      mz();
+   }
+   catch(e){
+     alert(e);
+   };
+    
+    
   };
   // Register ScratchExtension
   ScratchExtensions.register('Test Extension',descriptor,ext);
