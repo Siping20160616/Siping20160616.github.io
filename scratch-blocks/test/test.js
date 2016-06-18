@@ -4,6 +4,8 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 (function(ext){
   var status=1;     // default Not Ready
   var receive=null; //
+  var SenderID=null;
+  var data=JSON.parse('{}');
   // shutdown
   ext._shutdown=function(){};
   // status
@@ -34,11 +36,11 @@ var scriptpath = document.currentScript.src.match(/.*\//);
   };
   // connect block
   ext.connect=function(str){
-    //Connect(str);
+    Connect(str);
   };
   // send block
   ext.send=function(str){
-    //Send(str);
+    Send(str);
   };
   // stataus block
   ext.status=function(){
@@ -60,11 +62,11 @@ var scriptpath = document.currentScript.src.match(/.*\//);
   }
   // GUID
   ext.guid=function(){
-    //return guid();
+    return guid();
   };
   // close block
   ext.close=function(){
-    //Close();
+    Close();
   };
   // descriptor
   var descriptor={
