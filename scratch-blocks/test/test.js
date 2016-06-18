@@ -7,7 +7,7 @@
   var name='Test Extension';
   // descriptor
   var descriptor={
-    blocks: [
+    blocks:[
       [' ','connect %s','connect','ws://localhost:50000/'],
       [' ','send %s','send','{}'],
       ['r','status','status'],
@@ -23,7 +23,7 @@
   };
   // shutdown
   ext._shutdown=function(){
-    Close();
+    //Close();
   };
   // status
   ext._getStatus=function(){
@@ -40,15 +40,15 @@
   };
   // connect block
   ext.connect=function(str){
-    Connect(str);
+    //Connect(str);
   };
   // send block
   ext.send=function(str){
-    Send(str);
+    //Send(str);
   };
   // stataus block
   ext.status=function(){
-      return status;
+    return status;
   };
   // receive block
   ext.receive=function(){
@@ -56,7 +56,7 @@
   };
   // close block
   ext.close=function(){
-    Close();
+    //Close();
   };
   // JSON_parse block
   ext.JSON_parse=function(str,item){
@@ -69,7 +69,7 @@
   }
   // GUID
   ext.guid=function(){
-    return guid();
+    //return guid();
   };
   // command block
   ext.command = function(str) {
@@ -84,6 +84,7 @@
   ///////////////////////////
   ///////////////////////////
   // Connect
+  /*
   function Connect(str){
     if((url==str)&&(status==2))return;
     url=str;
@@ -135,7 +136,7 @@
     return true;
   };
   // clode
- function Close(){
+  function Close(){
     url=null;
     recive=null;
     websocket.close();
@@ -147,7 +148,7 @@
     };
     return s4()+s4()+'-'+s4()+'-'+s4()+'-'+s4()+'-'+s4()+s4()+s4();
   };
+  */
   // Register ScratchExtension
   ScratchExtensions.register(name,descriptor,ext);
-  
 })({});
