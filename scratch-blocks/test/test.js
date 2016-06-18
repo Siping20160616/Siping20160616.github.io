@@ -8,15 +8,15 @@
   // descriptor
   var descriptor={
     blocks: [
-      ['r','command %s','command','{"hello world"}','command'],
-      ['r','script %s','script','{return "hello world";}'],
       [' ','connect %s','connect','ws://localhost:50000/'],
       [' ','send %s','send','{}'],
       ['r','status','status'],
       ['r','receive','receive'],
+      [' ','close','close'],
       ['r','JSON_parse %s %s','JSON_parse','{}',''],
       ['r','guid','guid'],
-      [' ','close','close']
+      ['r','command %s','command','{"hello world"}','command'],
+      ['r','script %s','script','{return "hello world";}']
     ],
     menus:{script_mode:['command','function']},
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
