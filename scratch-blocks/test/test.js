@@ -21,8 +21,6 @@
     menus:{script_mode:['command','function']},
     url: 'https://Siping20160616.github.io/scratch-blocks/test'
   };
-  // Register ScratchExtension
-  ScratchExtensions.register(name,descriptor,ext);
   // shutdown
   ext._shutdown=function(){
     close();
@@ -149,4 +147,7 @@
     };
     return s4()+s4()+'-'+s4()+'-'+s4()+'-'+s4()+'-'+s4()+s4()+s4();
   };
+  // Register ScratchExtension
+  ScratchExtensions.register(name,descriptor,ext);
+  
 })({});
