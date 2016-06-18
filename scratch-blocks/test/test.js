@@ -46,6 +46,7 @@ var scriptpath = document.currentScript.src.match(/.*\//);
   var name = 'Test Extension';
   // Register ScratchExtension
   ScratchExtensions.register(name,descriptor,ext);
-//})({});
-})();
+  
+})({});
+//})();
 
