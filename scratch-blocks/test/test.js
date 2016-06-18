@@ -11,7 +11,7 @@ try {
   mz();
 }
 catch(e){
-  alert(e);
+ // alert(e);
 };
 
 (function(ext){
