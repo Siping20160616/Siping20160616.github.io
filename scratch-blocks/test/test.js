@@ -40,11 +40,11 @@
   };
   // connect block
   ext.connect=function(str){
-    //Connect(str);
+    Connect(str);
   };
   // send block
   ext.send=function(str){
-    //Send(str);
+    Send(str);
   };
   // stataus block
   ext.status=function(){
@@ -56,7 +56,7 @@
   };
   // close block
   ext.close=function(){
-    //Close();
+    Close();
   };
   // JSON_parse block
   ext.JSON_parse=function(str,item){
@@ -69,7 +69,7 @@
   }
   // GUID
   ext.guid=function(){
-    //return guid();
+    return guid();
   };
   // command block
   ext.command = function(str) {
