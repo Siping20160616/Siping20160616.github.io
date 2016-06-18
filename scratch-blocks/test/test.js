@@ -3,15 +3,11 @@ var scriptpath = document.currentScript.src.match(/.*\//);
 
 //$.getScript(scriptpath + 'f001.js',function(script,status,xhr) { });
 
-$.getScript(scriptpath+"f001.js", function(){
-  //alert("Script loaded and executed.");
-  //mz();
-});
 try {
-  mz();
+   $.getScript(scriptpath+"f001.js");
 }
 catch(e){
- // alert(e);
+  alert(e);
 };
 
 (function(ext){
